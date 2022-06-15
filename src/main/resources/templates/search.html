@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thông tin chi tiết</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!--css-->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <!--js-->
+
+
+</head>
+<body>
+<div class="container">
+    <h3> TRA CỨU THÔNG TIN TUYỂN SINH </h3>
+
+    <form th:action="@{/search}" method="post" class="form-example">
+        <div class="row">
+            <label for="fullName">Họ tên</label>
+            <input type="text" id="fullName" name="fullName"></br>
+
+        </div>
+        <div class="row">
+            <label for="studentCode">Mã học sinh</label>
+            <input type="text" id="studentCode" name="studentCode"></br>
+        </div>
+        <div class="row">
+            <label for="submitBtn"></label>
+            <input type="submit" id="submitBtn" value="Tìm kiếm">
+        </div>
+
+
+    </form>
+
+    <table>
+        <tr>
+            <th>Mã học sinh</th>
+            <th>Lớp</th>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Nơi sinh</th>
+            <th>Dân tộc</th>
+            <th>Hộ khẩu</th>
+            <th>Điện thoại</th>
+            <th>Tổng điểm lớp 1</th>
+            <th>Tổng điểm lớp 2</th>
+            <th>Tổng điểm lớp 3</th>
+            <th>Tổng điểm lớp 4</th>
+            <th>Tổng điểm lớp 5</th>
+            <th>Tổng điểm kết quả 5 năm</th>
+            <th>Điểm ưu tiên</th>
+            <th>Tổng điểm sơ tuyển</th>
+            <th>Ghi chú</th>
+
+        </tr>
+        <th:block th:each="obj: ${studentList}">
+            <tr>
+                <td th:text="${obj.studentCode}"></td>
+                <td th:text="${obj.className}"></td>
+                <td th:text="${obj.fullName}"></td>
+                <td th:text="${#dates.format(obj.birthday, 'dd-MM-yyyy')}"></td>
+                <td th:text="${obj.sex}"></td>
+                <td th:text="${obj.placeOfBirth}"></td>
+                <td th:text="${obj.nation}"></td>
+                <td th:text="${obj.household}"></td>
+                <td th:text="${obj.phone}"></td>
+                <td th:text="${obj.totalPointFirstGrade}"></td>
+                <td th:text="${obj.totalPointSecondGrade}"></td>
+                <td th:text="${obj.totalPointThirdGrade}"></td>
+                <td th:text="${obj.totalPointFourthGrade}"></td>
+                <td th:text="${obj.totalPointFifthGrade}"></td>
+                <td th:text="${obj.totalPointGrade}"></td>
+                <td th:text="${obj.priorityPoint}"></td>
+                <td th:text="${obj.totalPoint}"></td>
+                <td th:text="${obj.note}"></td>
+
+            </tr>
+
+
+        </th:block>
+
+    </table>
+    <footer>
+        <!-- Copyright -->
+        <div style="background-color: #01904a;">
+            Master Dev 4 2022
+        </div>
+        <!-- Copyright -->
+    </footer>
+</div>
+
+</body>
+</html>

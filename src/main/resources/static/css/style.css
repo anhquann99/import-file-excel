@@ -1,0 +1,39 @@
+.container{
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: small;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.row {
+margin: 10px;
+}
+label{
+    display: inline-block;
+    width: 100px;
+}
+.copy-right{
+    padding: 10px;
+    width: 350px;
+    margin: auto;
+}
+footer{
+    color: white;
+}
+
+
+

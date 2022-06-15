@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Trang chủ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container">
+    <h3> TRA CỨU THÔNG TIN TUYỂN SINH </h3>
+    <div class="img">
+        <img th:src="@{/images/logo.jpg}" width="150" height="150">
+    </div>
+    <form th:action="@{/importOrderExcel}" method="post" enctype="multipart/form-data">
+        <input type="file" th:name="file"/>
+        <input th:type="submit" value="Import"/>
+    </form>
+
+
+    <footer >
+        <!-- Copyright -->
+        <div class="copy-right">
+            <div style="background-color: #01904a;">
+                Master Dev 4 2022
+            </div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
